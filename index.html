@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testimonilas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container testimonial">
+        <div class="heading py-4 text-center"> <h1>Let’s Hear What Our Clients Say</h1>
+            <p>We transform clients’ ideas into reality. Let’s see what made them love our work.</p></div>
+        <div class="row ">
+            <div class="col-lg-5 col-md-6 col-12">
+                <div class="testimonial-img">
+                    <iframe srcdoc="
+                    <a href='https://www.youtube.com/embed/c-A00oIRleg?autoplay=1&mute=1'>
+                      <img class='iframe_img' style='width:100%;border-radius:20px' src='https://www.apptunix.com/wp-content/uploads/2022/11/david-1.jpg' alt=''>
+                    </a>
+                  " frameborder="0" allowfullscreen
+                  nitro-og-src="https://www.youtube.com/embed/c-A00oIRleg?enablejsapi=0&html5=1&mute=1&autoplay=1"
+                  src=""
+                  class="active-img" id="client-image"></iframe>
+                </div>
+              </div>
+            <div class="col-lg-7 col-md-6 col-12 testimonial-text">
+                <div class="user-text">
+                    <i class="fas fa-quote-left"></i>
+                    <h1 class="fw-bold">Sumitra Bhanari</h1>
+                    <h6>student</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero corporis saepe est, provident reiciendis perspiciatis rerum! Soluta aliquam maiores iste pariatur quod assumenda eveniet, sit, iure aperiam ipsa id suscipit.</p>  
+                </div>
+                <div class="user-text active-text">
+                    <i class="fas fa-quote-left"></i>
+                    <h1 class="fw-bold">Ram Bhanari</h1>
+                    <h6>student</h6>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero corporis saepe est, provident reiciendis perspiciatis rerum! Soluta aliquam maiores iste pariatur quod assumenda eveniet, sit, iure aperiam ipsa id suscipit.</p>
+                </div>
+                <div class="user-text">
+                    <i class="fas fa-quote-left"></i>
+                    <h1 class="fw-bold">Santosh Bhanari</h1>
+                    <h6>student</h6>
+                    <p>ndcndjcbds cdnscdjc cnmcbdjsc dbscjsdbciwdl uhjasbcskjdc jsbcjads</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-pic">
+        <div class="video_nav">
+            <figure>
+              <img src="https://cdn-hkaph.nitrocdn.com/zORRWebHlWLpduzYFnZuJsYtjOJnQQpk/assets/images/optimized/rev-799d136/wp-content/uploads/2022/12/abdul.png"  alt=""  class="user-pic" onclick="showReview(event)"/>
+            </figure>
+        </div>
+        <img src="https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?size=626&ext=jpg&ga=GA1.1.640406974.1676876164&semt=sph" alt="" class="user-pic" onclick="showReview(event)">
+        <div class="video_nav">
+            <figure>
+              <img src="https://cdn-hkaph.nitrocdn.com/zORRWebHlWLpduzYFnZuJsYtjOJnQQpk/assets/images/optimized/rev-799d136/wp-content/uploads/2022/12/abdul.png"  alt=""  class="user-pic" onclick="showReview(event)"/>
+            </figure>
+        </div>
+        </div>
+    </div>
+    <script>
+        let userPics = document.getElementsByClassName("user-pic");
+        let image=document.getElementById('client-image')
+
+        function showTestimonial() {
+  var testimonialSection = document.querySelector('.testimonial-img');
+  testimonialSection.style.display = 'block';
+  }
+  function showReview(event) {
+    let userTexts = document.getElementsByClassName("user-text");
+    let imageSrc = event.target.getAttribute("src");
+    let iframe = document.getElementById('client-image');
+    let iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    let iframeImage = iframeDocument.querySelector('.iframe_img');
+    for (let userPic of userPics) {
+                userPic.classList.remove("active-pic");
+            }
+            for (let userText of userTexts) {
+                userText.classList.remove("active-text");
+            }
+    let i = Array.from(userPics).indexOf(event.target);
+
+userPics[i].classList.add("active-pic");
+userTexts[i].classList.add("active-text");
+image.setAttribute('src',imageSrc)
+    iframeImage.setAttribute('src', imageSrc);
+  }
+  
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
